@@ -27,11 +27,11 @@ class BookList extends Component {
     }
 
     return (
-      <ul className="book-list">
+      <ul className="book-list row">
         {
           books.map((book) => {
             return (
-              <li key={book.id}><BookListItem book={book} onAddedToCart={() => onAddedToCart(book.id)}/></li>
+              <li key={book.id} className="col-sm-6"><BookListItem book={book} onAddedToCart={() => onAddedToCart(book.id)}/></li>
             )
           })
         }

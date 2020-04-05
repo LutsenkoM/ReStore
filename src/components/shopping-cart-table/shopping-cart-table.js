@@ -4,7 +4,7 @@ import { bookAddedToCart, bookRemovedFromCart, allBooksRemovedFromCart } from '.
 
 import './shopping-cart-table.css';
 
-const ShoppingCartTable = ({items, total, onIncrease, onDecrease, onDelete}) => {
+const ShoppingCartTable = ({items, orderTotal, onIncrease, onDecrease, onDelete}) => {
   const renderRow = (item, index) => {
     const { id, title, count, total } = item;
     return (
@@ -48,16 +48,17 @@ const ShoppingCartTable = ({items, total, onIncrease, onDecrease, onDelete}) => 
       </table>
 
       <div className="total">
-        Total: ${total}
+        Total: ${orderTotal}
       </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
+  console.log('EEE', state.shoppingCart.cartItems);
   return {
     items: state.shoppingCart.cartItems,
-    total: state.shoppingCart.orderTotal
+    orderTotal: state.shoppingCart.orderTotal
   };
 };
 

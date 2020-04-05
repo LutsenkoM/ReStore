@@ -39,8 +39,6 @@ const allBooksRemovedFromCart = (bookId) => {
   };
 };
 
-const
-
 export {
   booksLoaded,
   booksRequested,
